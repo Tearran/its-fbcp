@@ -12,12 +12,11 @@ Advantages/Disatvantages:
 - manual controle
   - SSH Start/Stop display driver
   - SSH Enable/Disable Auto Loading
-  - Mixing projects
+  - switching display drivers
     - Stop fbcp to Start luma.lcd
-    - GPIO Control of driver
     
-## Reference 
-Initial proof of concept video: [youtube](https://www.youtube.com/watch?v=h1jhuR-oZm0)
+## Video Refrance:
+  - TODO: [Youtube](https://www.youtube.com/user/tearran13)
 
 ## Alternate Build example
 With System Control of Frambuffer
@@ -51,9 +50,7 @@ sudo install $HOME/fbcp-ili9341/fbcp-ili9341 /usr/bin/fbcp
 To set up the driver to launch at startup, creat a system service
 
 NOTE: Changing "rc.local" to "loclal-files" Assumes mildly faster exucution of fbcp during bootup
-  - TODO: test
-Video Refrance:
-  - TODO: [Youtube]()
+
 ```bash
 {
 #Startup configuration
