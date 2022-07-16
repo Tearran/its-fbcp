@@ -45,7 +45,7 @@ CTRL-C to exit
 ## Launching the display driver at startup
 Install fbcp to /usr/bin/ 
 ```bash
-sudo install $HOME/fbcp-ili9341/fbcp-ili9341 /usr/bin/fbcp
+sudo install $HOME/fbcp-ili9341/build/fbcp-ili9341
 ```
 To set up the driver to launch at startup, creat a system service
 
