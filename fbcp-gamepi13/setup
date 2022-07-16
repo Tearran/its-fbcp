@@ -1,0 +1,73 @@
+#!/usr/bin/bash
+clear
+
+DIRECTORY=$(cd $(dirname "$0") && pwd)
+SRC="${BASH_SOURCE[0]}"
+
+set_fbcp_bin(){
+
+  [[ ! -f $DIRECTORY/fbcp-gamepi13.bin ]] && echo "fbcp Binary mising Download it " && exit 1
+  [[   -f $DIRECTORY/fbcp-gamepi13.bin ]] && [[ ! -f /usr/bin/fbcp ]] && sudo install $DIRECTORY/fbcp-gamepi13.bin /usr/bin/fbcp
+  sleep 1
+  [[ -f /usr/bin/fbcp ]] && echo "Installed Binary!... testing for 5 seconds"
+}
+
+set_config_txt(){
+
+[[ ! -f /boot/back.config.txt ]] && sudo cp /boot/config.txt /boot/back.config.txt
+cat << EOF > /tmp/config.txt
+
+[all]
+display_hdmi_rotate=2
+hdmi_force_hotplug=1
+hdmi_cvt=240 240 60 1 0 0 0
+hdmi_group=2
+hdmi_mode=1
+hdmi_mode=87
+
+EOF
+
+sudo cp --no-preserve=mode -f /tmp/config.txt /boot/config.txt
+
+echo "config.txt Complete!" 
+
+}
+
+set_fbcpd_daemon(){
+
+[[   -f /etc/systemd/system/fbcpd.service ]] && sudo systemctl disable fbcpd.service && sudo rm /etc/systemd/system/fbcpd.service
+
+sudo cat << EOF > /tmp/fbcpd.service
+
+[Unit]
+Description=Starts Frambuffer copy
+DefaultDependencies=false
+
+[Service]
+Type=simple
+ExecStart=fbcp
+WorkingDirectory=/usr/bin/
+
+[Install]
+WantedBy=local-fs.target
+
+EOF
+
+sudo cp -f /tmp/fbcpd.service /etc/systemd/system/fbcpd.service
+systemctl enable fbcpd.service
+
+echo "fbcpd Complete!"
+
+}
+
+set_fbcp_bin
+sleep 1
+echo "set bin Complete!"
+
+set_fbcpd_daemon
+sleep 1
+echo "set service daemon Complete!"
+
+set_config_txt
+sleep 1
+echo "Set display Complete!"
