@@ -30,7 +30,7 @@ To set up the driver to launch at startup, creat a system service
 
 ```bash
 {
-#Startup configuration
+# start of Make a temp C file for systemd && systemctrl
 sudo cat << EOF > /tmp/fbcpd.service
 
 [Unit]
@@ -45,9 +45,15 @@ WorkingDirectory=/usr/bin/
 [Install]
 WantedBy=local-fs.target
 EOF
+# end of Make a temp startup configuration file for systemd && systemctrl
+#
+# Copy temp startup configuration to System folder
+  sudo cp -f /tmp/fbcpd.service /etc/systemd/system/fbcpd.service 
+# Enable the daemon
+  sudo systemctl enable fbcpd.service
+# Start the daemon
+  sudo systemctl start fbcpd.service
 
-sudo cp -f /tmp/fbcpd.service /etc/systemd/system/fbcpd.service 
-sudo systemctl enable fbcpd.service
 }
 ````
 ## Controle it
