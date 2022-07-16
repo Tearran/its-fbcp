@@ -1,8 +1,5 @@
-## Build example
-With System Control of Frambuffer
-
 ## Build it
-Here is a full example of what to type to build and run, if you have the Waveshare [1.3inch LCD HAT](https://www.waveshare.com/wiki/1.3inch_LCD_HAT) with ST7789VW controller:
+Here is a full example of what to type to build and run, if you have the Waveshare [1.3inch LCD HAT](https://www.waveshare.com/wiki/1.3inch_LCD_HAT)
 
 ```bash
 {
@@ -16,20 +13,20 @@ cmake --clean-first -Wno-dev -DWAVESHARE_ST7789VW_HAT=ON -DSPI_BUS_CLOCK_DIVISOR
 make -j
 }
 ```
-## Test Binary
+## Test it
 
 ```bash 
 sudo ./fbcp-ili9341
 ```
 CTRL-C to exit
-## Launching the display driver at startup
+
+## Install it
 Install fbcp to /usr/bin/ 
 ```bash
 sudo install $HOME/fbcp-ili9341/build/fbcp-ili9341 /usr/bin/fbcp
 ```
+## Start it
 To set up the driver to launch at startup, creat a system service
-
-NOTE: Changing "rc.local" to "loclal-files" Assumes mildly faster exucution of fbcp during bootup
 
 ```bash
 {
@@ -53,7 +50,8 @@ sudo cp -f /tmp/fbcpd.service /etc/systemd/system/fbcpd.service
 sudo systemctl enable fbcpd.service
 }
 ````
-## Usefull Service command
+## Controle it
+Usefull Service commands
 
 - Enable/Disable service
   - `sudo systemctl enable fbcpd.service`
@@ -63,3 +61,8 @@ sudo systemctl enable fbcpd.service
   - `sudo systemctl start fbcpd.service`
   - `sudo systemctl stop fbcpd.service`
   - `sudo systemctl restart fbcpd.service`
+
+## Use it
+include with:
+  - bash scripts
+  - python3
