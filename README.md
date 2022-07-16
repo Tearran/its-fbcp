@@ -1,6 +1,5 @@
 # its-fbcp
-## Include This Script "fbcp-ili9341"
-###### Include Tearran's Script
+## Include This Script "fbcp-ili9341" 
 ### About its-fbcp
  A method of setup for [juj](https://github.com/juj)'s [fbcp-ili9341](https://github.com/juj/fbcp-ili9341) Fast Display Frambuffer 
 
