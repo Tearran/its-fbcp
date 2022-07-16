@@ -1,17 +1,22 @@
 # its-fbcp
 ## Include This Script "fbcp-ili9341" 
-### About its-fbcp
- A method of setup for [juj](https://github.com/juj)'s [fbcp-ili9341](https://github.com/juj/fbcp-ili9341) Fast Display Frambuffer 
+### About it
+its-fbcp
+Setup for [juj](https://github.com/juj)'s [fbcp-ili9341](https://github.com/juj/fbcp-ili9341) Fast Display Frambuffer 
 
-Advantages/Disatvantages:
-- RE-compile without rm build directory contents
-  - `cmake --clean-first`
-  - `rm` may be more reliable
+Here is a [Full example](https://github.com/Tearran/its-fbcp/edit/main/fbcp-gamepi13/README.md) of what to type to build and run, if you have the
+
+- Waveshare: 
+  - [1.3inch LCD HAT](https://www.waveshare.com/wiki/1.3inch_LCD_HAT) - [Full example](https://github.com/Tearran/its-fbcp/edit/main/fbcp-gamepi13/README.md)
+  - TODO: [GamePi20]
+  - TODO: [ST7789vw]
+  - TODO: [st7789s] ??
+  
+This method offfers:
 - system controle of fbcp
   - loads befor rc.local
 - manual controle
   - SSH Start/Stop display driver
   - SSH Enable/Disable Auto Loading
-  - switching display drivers
-    - Stop fbcp to Start luma.lcd
-    
+  - Switching display drivers
+    - ie: Stop fbcp to Start luma.lcd
