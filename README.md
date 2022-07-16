@@ -7,10 +7,10 @@ Setup for [juj](https://github.com/juj)'s [fbcp-ili9341](https://github.com/juj/
 Here is a [Full example](https://github.com/Tearran/its-fbcp/edit/main/fbcp-gamepi13/README.md) of what to type to build and run, if you have the
 
 - Waveshare: 
-  - [1.3inch LCD HAT](https://www.waveshare.com/wiki/1.3inch_LCD_HAT) - [Full example](https://github.com/Tearran/its-fbcp/edit/main/fbcp-gamepi13/README.md)
-  - TODO: [GamePi20]
-  - TODO: [ST7789vw]
-  - TODO: [st7789s] ??
+  - [ 1.3inch LCD HAT ] - [Full example](https://github.com/Tearran/its-fbcp/edit/main/fbcp-gamepi13/README.md)
+  - TODO: [ GamePi20 ]
+  - TODO: [ ST7789vw ]
+  - TODO: [ st7789s ] ??
   
 This method offfers:
 - system controle of fbcp
