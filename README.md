@@ -78,14 +78,6 @@ sudo systemctl enable fbcpd.service
 }
 ````
 ## Usefull Service command
-The following command have been tested:
-with:
-- bash
-- python3
-on:
-- raspberry pi z
-- raspberry pi z w
-- raspberry pi z w 2
 
 - Enable/Disable service
   - `sudo systemctl enable fbcpd.service`
