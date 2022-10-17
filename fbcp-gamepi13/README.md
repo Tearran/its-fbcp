@@ -14,7 +14,7 @@ make -j
 }
 ```
 ## Build it
-[1.3inch LCD HAT](https://www.waveshare.com/wiki/1.3inch_LCD_HAT)
+Pimoroni Pirate Audio [1.3inch LCD HAT](https://learn.pimoroni.com/article/getting-started-with-pirate-audio)
 
 ```bash
 {
