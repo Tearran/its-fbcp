@@ -1,5 +1,5 @@
 ## Build it
-Here is a full example of what to type to build and run, if you have the Waveshare [1.3inch LCD HAT](https://www.waveshare.com/wiki/1.3inch_LCD_HAT)
+Waveshare [1.3inch LCD HAT](https://www.waveshare.com/wiki/1.3inch_LCD_HAT)
 
 ```bash
 {
@@ -13,6 +13,23 @@ cmake --clean-first -Wno-dev -DWAVESHARE_ST7789VW_HAT=ON -DSPI_BUS_CLOCK_DIVISOR
 make -j
 }
 ```
+## Build it
+[1.3inch LCD HAT](https://www.waveshare.com/wiki/1.3inch_LCD_HAT)
+
+```bash
+{
+cd ~
+sudo apt-get install git cmake
+git clone https://github.com/juj/fbcp-ili9341.git
+cd fbcp-ili9341
+mkdir build
+cd build
+cmake --clean-first -Wno-dev -DPIRATE_AUDIO_ST7789_HAT=ON -DSPI_BUS_CLOCK_DIVISOR=30 -DBACKLIGHT_CONTROL=ON -DUSE_DMA_TRANSFERS=OFF -DSTATISTICS=0 ..
+make -j
+}
+```
+
+
 ## Test it
 
 ```bash 
